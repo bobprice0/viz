@@ -5,4 +5,9 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://bobprice0.github.io',
                 'git_url': 'https://github.com/bobprice0/viz',
                 'lib_path': 'viz'},
-  'syms': {'viz.core': {'viz.core.foo': ('core.html#foo', 'viz/core.py')}}}
+  'syms': { 'viz.core': { 'viz.core.absplot': ('core.html#absplot', 'viz/core.py'),
+                          'viz.core.absplots': ('core.html#absplots', 'viz/core.py'),
+                          'viz.core.cplot3d': ('core.html#cplot3d', 'viz/core.py'),
+                          'viz.core.default_color_function': ('core.html#default_color_function', 'viz/core.py'),
+                          'viz.core.do_phase_plot': ('core.html#do_phase_plot', 'viz/core.py'),
+                          'viz.core.phase_plot': ('core.html#phase_plot', 'viz/core.py')}}}
