@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "viz"
+  site-url: "https://bobprice0.github.io/viz"
+  description: "Library for visualising complex functions."
+  repo-branch: main
+  repo-url: "https://github.com/bobprice0/viz"
