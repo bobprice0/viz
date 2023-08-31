@@ -69,7 +69,10 @@ def phase_plot(fs,                 # the funtion(s) to plot
                titles,             # the titles for each plot
                imagesz=3           # the size of each image (units???)
               ):
-    "A 2D depiction of a rectangular area of the domain of the function using colour to indicate the phase of the output of the function, with brightness indicating the magnitude."
+    """A 2D depiction of a rectangular area of the domain of the function using colour 
+    to indicate the phase of the output of the function, 
+    with brightness indicating the magnitude.
+    """
     if not isinstance(fs, list):
         fs, titles = [fs], [titles] 
     count = len(fs)
