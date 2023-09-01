@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\ncplot3d\n\n cplot3d (f)\n\n\nsource\n\n\nabs_plot\n\n abs_plot (fs, titles, **kwargs)\n\n\nsource\n\n\nphase_plot\n\n phase_plot (f, cmod=&lt;module 'cmath' from\n             '/opt/hostedtoolcache/Python/3.9.17/x64/lib/python3.9/lib-\n             dynload/cmath.cpython-39-x86_64-linux-gnu.so'&gt;, title=None,\n             axes=None, imagesz=3, re=[-5, 5], im=[-5, 5], points=2000,\n             color=None, verbose=False)\n\nA 2D depiction of a rectangular area of the domain of the function using colour to indicate the phase of the output of the function, with brightness indicating the magnitude.\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nf\n\n\nthe function to be plotted.\n\n\ncmod\nmodule\ncmath\n\n\n\ntitle\nNoneType\nNone\n\n\n\naxes\nNoneType\nNone\n\n\n\nimagesz\nint\n3\n\n\n\nre\nlist\n[-5, 5]\n\n\n\nim\nlist\n[-5, 5]\n\n\n\npoints\nint\n2000\n\n\n\ncolor\nNoneType\nNone\n\n\n\nverbose\nbool\nFalse\n\n\n\n\nWhen using the default colour function, the complex plane itself looks like this. Plotted points get lighter as their magnitude increases.\n\nax = phase_plot(lambda z: z, re=[-100,100], im=[-100,100])\n\n\n\n\nThe function should return the axes object that was used, so that the plot can be further embellished.\nThe function to be plotted can be formulated using complex functions from cmath, mpmath or np. The module can be specified using the cmod argument.\nUsing the default color map, if the output of the function is ‘nan’, the plotted point will be grey. If the output of the function is infinite, the result will be white.\n\ndef f1(z):\n    if z.real &lt; 0:\n        if z.imag &gt; 0:\n            return z/0.0\n        else:\n            return cmath.nan\n    else:\n        return z\n\nax = phase_plot(f1)\n\n/tmp/ipykernel_82582/845096383.py:4: RuntimeWarning: divide by zero encountered in cdouble_scalars\n  return z/0.0\n\n\n\n\n\n\nsource\n\n\nphase_plot_array\n\n phase_plot_array (fs, titles, imagesz=3, **kwargs)\n\nA convenience function allowing several phase plots to be displayed side by side\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nfs\n\n\nthe funtion(s) to plot\n\n\ntitles\n\n\nthe titles for each plot\n\n\nimagesz\nint\n3\n\n\n\nkwargs"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "viz",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "viz",
+    "section": "Install",
+    "text": "Install\npip install viz"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "viz",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2"
+  }
+]
