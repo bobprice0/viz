@@ -52,7 +52,7 @@ def abs_plot(fs, titles, **kwargs):
 # %% ../nbs/00_core.ipynb 6
 def phase_plot(
                  f,                  # the function to be plotted.
-                 *, 
+                 *,                  # ???
                  cmod = cmath,       # the module to be used for complex numbers
                  title = None,       # a title for the plot
                  axes = None,        # axes, if a subplot has already been allocated
@@ -63,6 +63,10 @@ def phase_plot(
                  color=None,
                  verbose=False
             ):
+    """A 2D depiction of a rectangular area of the domain of the function using colour 
+    to indicate the phase of the output of the function, 
+    with brightness indicating the magnitude.
+    """
     if axes is None:
         _, axes = plt.subplots(ncols=1, figsize=(imagesz, imagesz))
     cshim = get_shim(cmod)
@@ -96,16 +100,15 @@ def phase_plot(
         axes.set_title(title, fontsize=20)
     return axes
 
-# %% ../nbs/00_core.ipynb 13
+# %% ../nbs/00_core.ipynb 15
 def phase_plot_array(
                fs,                 # the funtion(s) to plot
                titles,             # the titles for each plot
-               imagesz=3           # the size of each image (units???)
+               *,
+               imagesz=3,          # the size of each image (units???)
+               **kwargs            # remaining keyword arguments are passed to `phase_plot`
               ):
-    """A 2D depiction of a rectangular area of the domain of the function using colour 
-    to indicate the phase of the output of the function, 
-    with brightness indicating the magnitude.
-    """
+    """A convenience function allowing several phase plots to be displayed side by side"""
     if not isinstance(fs, list):
         fs, titles = [fs], [titles] 
     count = len(fs)
@@ -115,7 +118,7 @@ def phase_plot_array(
     for ax, f, t in zip(axes, fs, titles):
         phase_plot(f, title=t, axes=ax, points=2000)
 
-# %% ../nbs/00_core.ipynb 14
+# %% ../nbs/00_core.ipynb 16
 def default_color_function(shim, z):
     if shim.isinf(z):
         return (1.0, 1.0, 1.0)
@@ -126,7 +129,7 @@ def default_color_function(shim, z):
     b = 1.0 - float(1/(1.0+abs(z)**0.3))
     return colorsys.hls_to_rgb(a, b, 0.8)
 
-# %% ../nbs/00_core.ipynb 15
+# %% ../nbs/00_core.ipynb 17
 def do_abs_plot(axes, f, title, max_im = 6.3):
     ctx = mpmath
     X = np.arange(-6.3, 5.3, 0.125)
@@ -144,7 +147,7 @@ def do_abs_plot(axes, f, title, max_im = 6.3):
     axes.view_init(30, 315)
     axes.set_title(title, fontsize=20)
 
-# %% ../nbs/00_core.ipynb 16
+# %% ../nbs/00_core.ipynb 18
 class ComplexShim:
     def __init__(self, cmod):
         if cmod == cmath:
